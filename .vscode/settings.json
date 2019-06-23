@@ -1,0 +1,12 @@
+{
+  "tslint.autoFixOnSave": true,
+
+  "files.exclude": {
+    "node_modules": true,
+    "*.js": true,
+  },
+
+  "files.associations": {
+    ".npmrc": "dotenv",
+	},
+}

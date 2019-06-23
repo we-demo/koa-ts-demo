@@ -1,0 +1,8 @@
+{
+  "name": "@fritx/node-ts-demo",
+  "version": "0.0.0",
+  "devDependencies": {
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.2"
+  }
+}
