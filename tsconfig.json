@@ -1,7 +1,7 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "outDir": ".",
+    "outDir": "./dist",
     "target": "es2017",
     "module": "commonjs",
     "noImplicitAny": false,
@@ -22,7 +22,7 @@
     "importHelpers": true,
   },
   "include": [
-    "**/*.ts",
+    "src/**/*.ts",
   ],
   "exclude": [
     "node_modules",

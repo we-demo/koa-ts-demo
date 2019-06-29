@@ -1,3 +1,7 @@
+### Changelog
+
+- move `*.ts` to src/ and build to dist/
+
 ```sh
 # Node version
 # node >= 10
@@ -9,7 +13,7 @@ npm i
 npx tsc --watch
 
 # Run demo
-node hello
+node dist/hello
 ```
 
 ```plain

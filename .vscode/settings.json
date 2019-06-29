@@ -3,7 +3,7 @@
 
   "files.exclude": {
     "node_modules": true,
-    "*.js": true,
+    "src/*.js": true,
   },
 
   "files.associations": {
