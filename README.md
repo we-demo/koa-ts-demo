@@ -1,6 +1,7 @@
 ### Changelog
 
 - move `*.ts` to src/ and build to dist/
+- tslint autofix => eslint prettier autofix
 
 ```sh
 # Node version
