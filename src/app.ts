@@ -2,6 +2,7 @@ import * as Koa from 'koa'
 import * as helmet from 'koa-helmet'
 import * as ratelimit from 'koa-ratelimit'
 import { redis } from './redis'
+import { routes } from './routes'
 
 let port = process.env.PORT || 3000
 let app = new Koa()
@@ -32,9 +33,7 @@ app.use(
 
 app.use(helmet())
 
-app.use(async ctx => {
-  ctx.body = '<h1>Hello world</h1>'
-})
+app.use(routes)
 
 app.listen(port, () => {
   console.log('[koa] listening at port', port)
