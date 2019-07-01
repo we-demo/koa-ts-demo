@@ -1,3 +1,7 @@
+- [node-ts-demo](https://github.com/fritx/node-ts-demo)
+- [koa-ts-demo](https://github.com/fritx/koa-ts-demo)
+- [react-ts-demo](https://github.com/fritx/react-ts-demo)
+
 ### Changelog
 
 - move `*.ts` to src/ and build to dist/
