@@ -6,6 +6,11 @@
 
 - move `*.ts` to src/ and build to dist/
 - tslint autofix => eslint prettier autofix
+- ava test and npm scripts
+
+### Todo
+
+- definition for dist files
 
 ```sh
 # Node version
