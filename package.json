@@ -7,6 +7,9 @@
     "watch": "tsc --watch",
     "build": "tsc"
   },
+  "dependencies": {
+    "source-map-support": "^0.5.12"
+  },
   "devDependencies": {
     "@types/node": "^12.0.10",
     "@typescript-eslint/eslint-plugin": "^1.11.0",

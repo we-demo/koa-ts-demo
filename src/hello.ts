@@ -1,3 +1,4 @@
+import './sourcemap-polyfill'
 import { promises as fs } from 'fs'
 
 type Hello = string
@@ -9,6 +10,10 @@ async function hello(str: Hello) {
   let files = await fs.readdir('.')
   // tslint:disable-next-line no-console
   console.log(['files', files.length])
+
+  console.trace('here')
+
+  throw new Error('boom')
 }
 
 hello('world')

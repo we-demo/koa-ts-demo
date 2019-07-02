@@ -8,6 +8,10 @@
 - tslint autofix => eslint prettier autofix
 - ava test and npm scripts
 
+**[node-app]**
+
+- ts sourcemap support
+
 ### Todo
 
 - definition for dist files
