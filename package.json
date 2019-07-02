@@ -4,7 +4,11 @@
   "main": "./dist/app",
   "scripts": {
     "dev": "nodemon .",
-    "start": "node ."
+    "start": "node .",
+    "test": "npm run build && ava",
+    "lint": "eslint src/**/*.ts",
+    "watch": "tsc --watch",
+    "build": "tsc"
   },
   "dependencies": {
     "ioredis": "^4.10.0",
@@ -12,7 +16,8 @@
     "koa-body": "^4.1.0",
     "koa-helmet": "^4.2.0",
     "koa-ratelimit": "^4.2.0",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "source-map-support": "^0.5.12"
   },
   "devDependencies": {
     "@types/ioredis": "^4.0.12",
@@ -23,6 +28,7 @@
     "@types/node": "^12.0.10",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
+    "ava": "^2.1.0",
     "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
