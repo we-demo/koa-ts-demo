@@ -12,6 +12,7 @@
 
 - ts sourcemap support
 - npm start & nodemon dev
+- dotenv-cli & .env
 
 ### Todo
 
