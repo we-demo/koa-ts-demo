@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "main": "./dist/app",
   "scripts": {
-    "dev": "nodemon .",
-    "start": "node .",
-    "test": "npm run build && ava",
+    "dev": "dotenv nodemon .",
+    "start": "dotenv node .",
+    "test": "npm run build && dotenv ava",
     "lint": "eslint src/**/*.ts",
     "watch": "tsc --watch",
     "build": "tsc"
   },
   "dependencies": {
+    "dotenv-cli": "^2.0.0",
     "ioredis": "^4.10.0",
     "koa": "^2.7.0",
     "koa-body": "^4.1.0",
