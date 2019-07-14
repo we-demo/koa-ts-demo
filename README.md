@@ -11,6 +11,7 @@
 **[node-app]**
 
 - ts sourcemap support
+- npm start & nodemon dev
 
 ### Todo
 

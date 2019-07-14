@@ -13,6 +13,10 @@ async function hello(str: Hello) {
 
   console.trace('here')
 
+  setInterval(() => {
+    console.log('loop')
+  }, 3000)
+
   throw new Error('boom')
 }
 
