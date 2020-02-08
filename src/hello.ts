@@ -9,16 +9,16 @@ async function hello(str: Hello) {
 
   console.log(process.env.MY_VAR)
 
-  let files = await fs.readdir('.')
+  const files = await fs.readdir('.')
   console.log(['files', files.length])
 
   console.trace('here')
 
-  let prefixRedis = process.env.PREFIX_NODE_APP_REDIS
-  let keyVisit = `${prefixRedis}visit`
+  const prefixRedis = process.env.PREFIX_NODE_APP_REDIS
+  const keyVisit = `${prefixRedis}visit`
 
   setInterval(async () => {
-    let count = +(await redis.get(keyVisit)) || 0
+    const count = +(await redis.get(keyVisit)) || 0
     console.log(['visit', count])
     await redis.set(keyVisit, count + 1)
   }, 3000)

@@ -6,8 +6,8 @@ import { redis } from '../redis/redis'
 import { routes } from './routes'
 import { appSession } from './session'
 
-let port = process.env.PORT || 3000
-let app = new Koa()
+const port = process.env.PORT || 3000
+const app = new Koa()
 
 app.on('error', err => {
   // lintError(err)

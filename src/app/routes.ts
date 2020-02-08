@@ -1,8 +1,8 @@
 import Router from 'koa-router'
 import koaBody from 'koa-body'
 
-let router = new Router()
-let apiRouter = new Router()
+const router = new Router()
+const apiRouter = new Router()
 
 apiRouter.use(async (ctx, next) => {
   console.log(`[api request] method=${ctx.method} url=${ctx.url}`)
@@ -20,8 +20,8 @@ apiRouter.all('/error', async () => {
 })
 
 apiRouter.get('/session', koaBody(), async ctx => {
-  let lastRand = ctx.session.rand
-  let currRand = Math.random()
+  const lastRand = ctx.session.rand
+  const currRand = Math.random()
   ctx.session.rand = currRand
   ctx.body = { lastRand, currRand }
 })

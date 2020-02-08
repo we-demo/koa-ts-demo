@@ -7,7 +7,7 @@ import Koa from 'koa'
 export function appSession(app: Koa) {
   app.keys = [process.env.APP_SESSION_KEYS]
 
-  let config = {
+  const config = {
     store: RedisStore(redisOptions),
     key: 'koa:sess' /** (string) cookie key (default is koa:sess) */,
     /** (number || 'session') maxAge in ms (default is 1 days) */
