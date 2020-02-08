@@ -4,6 +4,7 @@
 
 ### Changelog
 
+- fix vscode autofix
 - move `*.ts` to src/ and build to dist/
 - tslint autofix => eslint prettier autofix
 - ava test and npm scripts
@@ -15,14 +16,15 @@
 - dotenv-cli & .env
 - redis options, ioredis
 
-### Todo
-
-- definition for dist files
-
 **[koa]**
 
 - koa, koa-helmet, koa-ratelimit, ioredis, koa error
 - nodemon, koa-router, koa-body, api error
+- app session, koa middlewares
+
+### Todo
+
+- definition for dist files
 
 ```sh
 # Node version
