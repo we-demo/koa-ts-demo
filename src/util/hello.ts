@@ -1,6 +1,6 @@
-import './polyfill/sourcemap'
 import { promises as fs } from 'fs'
-import { redis } from './redis/redis'
+import '../polyfill/sourcemap'
+import { redis } from '../redis/redis'
 
 type Hello = string
 

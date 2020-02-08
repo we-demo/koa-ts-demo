@@ -1,11 +1,12 @@
-import '../polyfill/sourcemap'
+require('../polyfill/sourcemap')
 import Koa from 'koa'
-import helmet from 'koa-helmet'
-import ratelimit from 'koa-ratelimit'
+import koaHelmet from 'koa-helmet'
+import KoaRatelimit from 'koa-ratelimit'
 import { redis } from '../redis/redis'
 import { routes } from './routes'
 import { appSession } from './session'
 
+const host = process.env.HOST || 'localhost'
 const port = process.env.PORT || 3000
 const app = new Koa()
 
@@ -17,7 +18,7 @@ app.on('error', err => {
 })
 
 app.use(
-  ratelimit({
+  KoaRatelimit({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     db: redis as any, // fixme
     disableHeader: false,
@@ -33,12 +34,12 @@ app.use(
   })
 )
 
-app.use(helmet())
+app.use(koaHelmet())
 
 appSession(app)
 
 app.use(routes)
 
 app.listen(port, () => {
-  console.log('[koa] listening at port', port)
+  console.log('[koa] listening at port', port, host, process.env.NODE_ENV)
 })

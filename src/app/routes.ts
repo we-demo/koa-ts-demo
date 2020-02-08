@@ -1,15 +1,8 @@
-import Router from 'koa-router'
 import koaBody from 'koa-body'
-import session from 'koa-session'
+import Router from 'koa-router'
 
-const router = new Router()
-const apiRouter = new Router<
-  {},
-  {
-    abc: number
-    session: session.Session | null
-  }
->()
+const router: MyRouter = new Router()
+const apiRouter: MyRouter = new Router()
 
 apiRouter.use(async (ctx, next) => {
   console.log(`[api request] method=${ctx.method} url=${ctx.url}`)
