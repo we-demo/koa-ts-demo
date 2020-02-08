@@ -4,10 +4,11 @@
 
 ### Changelog
 
-- fix vscode autofix
 - move `*.ts` to src/ and build to dist/
 - tslint autofix => eslint prettier autofix
 - ava test and npm scripts
+- fix vscode autofix
+- tsconfig esModuleInterop=true
 
 **[node-app]**
 

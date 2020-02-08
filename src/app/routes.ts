@@ -1,5 +1,5 @@
-import * as Router from 'koa-router'
-import * as koaBody from 'koa-body'
+import Router from 'koa-router'
+import koaBody from 'koa-body'
 
 let router = new Router()
 let apiRouter = new Router()

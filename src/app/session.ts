@@ -1,7 +1,7 @@
 import { redisOptions } from '../redis/redis-options'
-import * as RedisStore from 'koa-redis'
-import * as session from 'koa-session'
-import * as Koa from 'koa'
+import RedisStore from 'koa-redis'
+import session from 'koa-session'
+import Koa from 'koa'
 
 // https://github.com/koajs/session#example
 export function appSession(app: Koa) {
