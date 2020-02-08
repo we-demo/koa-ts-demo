@@ -1,14 +1,16 @@
 {
   "name": "@fritx/node-ts-demo",
   "version": "0.0.0",
-  "main": "./dist/app",
+  "main": "./dist/app/app",
   "scripts": {
-    "dev": "dotenv nodemon .",
+    "nodemon": "sleep 5 && dotenv nodemon -d 3 -w dist --exec 'NODE_ENV=development node .'",
+    "dev": "run-p watch nodemon",
     "start": "dotenv node .",
     "test": "npm run build && dotenv ava",
     "lint": "eslint src/**/*.ts",
-    "watch": "tsc --watch",
-    "build": "tsc"
+    "clean": "rm -rf dist",
+    "watch": "npm run clean && tsc --watch",
+    "build": "npm run clean && tsc"
   },
   "dependencies": {
     "dotenv-cli": "^2.0.0",
@@ -34,6 +36,7 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
     "typescript": "^3.5.2"
   }
