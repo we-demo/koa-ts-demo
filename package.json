@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "main": "./dist/app/app",
   "scripts": {
-    "nodemon": "sleep 5 && dotenv nodemon -d 3 -w dist --exec 'NODE_ENV=development node .'",
+    "start": "run-s build node:prod",
     "dev": "run-p watch nodemon",
-    "start": "dotenv node .",
+    "nodemon": "sleep 5 && nodemon -d 3 -w dist --exec 'npm run node:dev'",
+    "node:dev": "NODE_ENV=development dotenv node .",
+    "node:prod": "NODE_ENV=production dotenv node .",
     "test": "npm run build && dotenv ava",
     "lint": "eslint src/**/*.ts",
     "clean": "rm -rf dist",
@@ -13,7 +15,7 @@
     "build": "npm run clean && tsc"
   },
   "dependencies": {
-    "dotenv-cli": "^2.0.0",
+    "dotenv-cli": "^3.1.0",
     "ioredis": "^4.11.2",
     "koa": "^2.7.0",
     "koa-body": "^4.1.0",
