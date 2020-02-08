@@ -20,6 +20,7 @@
     "koa-helmet": "^4.2.0",
     "koa-ratelimit": "^4.2.0",
     "koa-router": "^7.4.0",
+    "koa-session": "^5.13.1",
     "source-map-support": "^0.5.12"
   },
   "devDependencies": {

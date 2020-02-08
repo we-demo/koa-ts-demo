@@ -19,6 +19,13 @@ apiRouter.all('/error', async () => {
   throw new Error('test')
 })
 
+apiRouter.get('/session', koaBody(), async ctx => {
+  let lastRand = ctx.session.rand
+  let currRand = Math.random()
+  ctx.session.rand = currRand
+  ctx.body = { lastRand, currRand }
+})
+
 apiRouter.get('/get', async ctx => {
   ctx.body = {
     query: ctx.query,
