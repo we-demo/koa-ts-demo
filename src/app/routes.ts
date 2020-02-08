@@ -1,5 +1,5 @@
-import koaBody from 'koa-body'
-import Router from 'koa-router'
+import koaBody = require('koa-body')
+import Router = require('koa-router')
 
 const router: MyRouter = new Router()
 const apiRouter: MyRouter = new Router()

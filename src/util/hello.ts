@@ -1,5 +1,5 @@
+require('../polyfill/sourcemap')
 import { promises as fs } from 'fs'
-import '../polyfill/sourcemap'
 import { redis } from '../redis/redis'
 
 type Hello = string

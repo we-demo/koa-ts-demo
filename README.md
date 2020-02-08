@@ -21,13 +21,12 @@
 - nodemon, koa-router, koa-body, api error
 - app session, koa middlewares
 - fix vscode autofix
-- tsconfig esModuleInterop=true
 - router ctx types
+- tsconfig esModuleInterop=false
 
 ### Todo
 
 - definition for dist files
-- disable esModuleInterop back
 
 ```sh
 # Node version

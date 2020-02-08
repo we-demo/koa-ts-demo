@@ -1,6 +1,6 @@
-import Koa from 'koa'
-import RedisStore from 'koa-redis'
-import session from 'koa-session'
+import Koa = require('koa')
+import RedisStore = require('koa-redis')
+import session = require('koa-session')
 import { redisOptions } from '../redis/redis-options'
 
 // https://github.com/koajs/session#example

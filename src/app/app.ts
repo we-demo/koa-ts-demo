@@ -1,10 +1,10 @@
 require('../polyfill/sourcemap')
-import Koa from 'koa'
-import koaHelmet from 'koa-helmet'
-import KoaRatelimit from 'koa-ratelimit'
 import { redis } from '../redis/redis'
 import { routes } from './routes'
 import { appSession } from './session'
+import Koa = require('koa')
+import KoaRatelimit = require('koa-ratelimit')
+import koaHelmet = require('koa-helmet')
 
 const host = process.env.HOST || 'localhost'
 const port = process.env.PORT || 3000
