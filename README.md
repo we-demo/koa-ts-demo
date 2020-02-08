@@ -7,8 +7,6 @@
 - move `*.ts` to src/ and build to dist/
 - tslint autofix => eslint prettier autofix
 - ava test and npm scripts
-- fix vscode autofix
-- tsconfig esModuleInterop=true
 
 **[node-app]**
 
@@ -22,10 +20,14 @@
 - koa, koa-helmet, koa-ratelimit, ioredis, koa error
 - nodemon, koa-router, koa-body, api error
 - app session, koa middlewares
+- fix vscode autofix
+- tsconfig esModuleInterop=true
+- router ctx types
 
 ### Todo
 
 - definition for dist files
+- disable esModuleInterop back
 
 ```sh
 # Node version
