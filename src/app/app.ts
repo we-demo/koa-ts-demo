@@ -19,6 +19,7 @@ app.on('error', err => {
 
 app.use(
   KoaRatelimit({
+    driver: 'redis',
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     db: redis as any, // fixme
     disableHeader: false,
