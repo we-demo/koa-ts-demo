@@ -1,3 +1,7 @@
 node_modules
 dist
 .env
+
+# https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md
+.nyc_output
+coverage

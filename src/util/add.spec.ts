@@ -6,6 +6,6 @@ test('add', async (t) => {
   t.is(add(1, 2), 3)
 })
 
-test.skip('failed', async (t) => {
+test('failed', async (t) => {
   t.is(add(1, 3), 7)
 })
