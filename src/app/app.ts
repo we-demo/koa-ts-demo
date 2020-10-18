@@ -10,7 +10,7 @@ const host = process.env.HOST || 'localhost'
 const port = process.env.PORT || 3000
 const app = new Koa()
 
-app.on('error', err => {
+app.on('error', (err) => {
   // lintError(err)
   const status = err.status || 500
   // tslint:disable-next-line no-console
@@ -30,7 +30,7 @@ app.use(
       reset: 'Rate-Limit-Reset',
       total: 'Rate-Limit-Total',
     },
-    id: ctx => ctx.ip,
+    id: (ctx) => ctx.ip,
     max: 20,
   })
 )

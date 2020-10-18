@@ -19,20 +19,20 @@ apiRouter.all('/error', async () => {
   throw new Error('test')
 })
 
-apiRouter.get('/session', koaBody(), async ctx => {
+apiRouter.get('/session', koaBody(), async (ctx) => {
   const lastRand = ctx.session.rand
   const currRand = Math.random()
   ctx.session.rand = currRand
   ctx.body = { lastRand, currRand }
 })
 
-apiRouter.get('/get', async ctx => {
+apiRouter.get('/get', async (ctx) => {
   ctx.body = {
     query: ctx.query,
   }
 })
 
-apiRouter.post('/post', koaBody(), async ctx => {
+apiRouter.post('/post', koaBody(), async (ctx) => {
   ctx.body = {
     query: ctx.query,
     body: ctx.request.body,
@@ -41,7 +41,7 @@ apiRouter.post('/post', koaBody(), async ctx => {
 
 router.use('/api', apiRouter.routes())
 
-router.get('/', async ctx => {
+router.get('/', async (ctx) => {
   ctx.body = '<h1>Hello world</h1>'
 })
 
