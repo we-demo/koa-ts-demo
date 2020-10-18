@@ -1,10 +1,10 @@
-import Koa = require('koa')
-import RedisStore = require('koa-redis')
-import session = require('koa-session')
+import Koa from 'koa'
+import RedisStore from 'koa-redis'
+import session from 'koa-session'
 import { redisOptions } from '../redis/redis-options'
 
 // https://github.com/koajs/session#example
-export function appSession(app: Koa) {
+export function appSession(app: Koa): void {
   app.keys = [process.env.APP_SESSION_KEYS]
 
   const config = {

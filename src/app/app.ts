@@ -1,14 +1,12 @@
 require('../polyfill/sourcemap')
+import Koa from 'koa'
+import koaHelmet from 'koa-helmet'
+import KoaRatelimit from 'koa-ratelimit'
 import { redis } from '../redis/redis'
-import { routes } from './routes'
+import { appRoutes } from '../routes'
 import { appSession } from './session'
-import Koa = require('koa')
-import KoaRatelimit = require('koa-ratelimit')
-import koaHelmet = require('koa-helmet')
 
-const host = process.env.HOST || 'localhost'
-const port = process.env.PORT || 3000
-const app = new Koa()
+export const app = new Koa()
 
 app.on('error', (err) => {
   // lintError(err)
@@ -39,8 +37,4 @@ app.use(koaHelmet())
 
 appSession(app)
 
-app.use(routes)
-
-app.listen(port, () => {
-  console.log('[koa] listening at port', port, host, process.env.NODE_ENV)
-})
+app.use(appRoutes)

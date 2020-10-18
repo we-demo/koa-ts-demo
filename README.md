@@ -4,9 +4,12 @@
 
 ### Changelog
 
+- supertest sample
+- switch to jest/coverage from ava+nyc
+- add nyc code coverage for ava
 - move `*.ts` to src/ and build to dist/
 - tslint autofix => eslint prettier autofix
-- ava test and npm scripts
+- ~~ava~~ test and npm scripts
 
 **[node-app]**
 
