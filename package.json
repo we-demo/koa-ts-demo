@@ -8,13 +8,14 @@
     "nodemon": "sleep 5 && nodemon -d 3 -w dist --exec 'npm run node:dev'",
     "node:dev": "NODE_ENV=development dotenv node .",
     "node:prod": "NODE_ENV=production dotenv node .",
-    "test": "npm run build && dotenv nyc ava",
+    "test": "dotenv jest -- --coverage",
     "lint": "eslint src/**/*.ts",
     "clean": "rm -rf dist",
     "watch": "npm run clean && tsc --watch",
     "build": "npm run clean && tsc"
   },
   "dependencies": {
+    "@babel/preset-typescript": "^7.12.1",
     "dotenv-cli": "^4.0.0",
     "ioredis": "^4.17.3",
     "koa": "^2.13.0",
@@ -26,8 +27,9 @@
     "source-map-support": "^0.5.19"
   },
   "devDependencies": {
-    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@babel/preset-env": "^7.12.1",
     "@types/ioredis": "^4.17.5",
+    "@types/jest": "^26.0.14",
     "@types/koa": "^2.11.5",
     "@types/koa-helmet": "^6.0.0",
     "@types/koa-ratelimit": "^4.2.2",
@@ -37,10 +39,10 @@
     "@types/source-map-support": "^0.5.3",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
     "@typescript-eslint/parser": "^4.4.1",
-    "ava": "^3.13.0",
     "eslint": "^7.11.0",
     "eslint-config-prettier": "^6.13.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.5.3",
     "node": "^12.19.0",
     "nodemon": "^2.0.5",
     "npm-run-all": "^4.1.5",
