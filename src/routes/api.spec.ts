@@ -12,11 +12,18 @@ describe('api', () => {
     server = app.listen()
   })
 
-  it('/error', () => {
-    return request(server)
-      .get('/error')
-      .expect(500)
-      .expect({ status: 500, error: 'Error: test' })
+  it('/error', async () => {
+    const originalLog = console.error
+    console.error = jest.fn()
+    try {
+      await request(server)
+        .get('/error')
+        .expect(500)
+        .expect({ status: 500, error: 'Error: test' })
+      expect(console.error).toBeCalledTimes(1)
+    } finally {
+      console.error = originalLog
+    }
   })
 
   it('/get', () => {
@@ -32,5 +39,9 @@ describe('api', () => {
       .send({ foo: 123, bar: 'hey' })
       .expect(200)
       .expect({ query: { a: '1', b: 'foo' }, body: { foo: 123, bar: 'hey' } })
+  })
+
+  afterAll(() => {
+    server.close()
   })
 })

@@ -15,4 +15,8 @@ describe('page', () => {
   it('/', () => {
     return request(server).get('/').expect(200).expect('<h1>Hello world</h1>')
   })
+
+  afterAll(() => {
+    server.close()
+  })
 })

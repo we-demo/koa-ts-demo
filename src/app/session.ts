@@ -1,14 +1,14 @@
 import Koa from 'koa'
 import RedisStore from 'koa-redis'
 import session from 'koa-session'
-import { redisOptions } from '../redis/redis-options'
+import { redis } from '../redis/redis'
 
 // https://github.com/koajs/session#example
 export function appSession(app: Koa): void {
   app.keys = [process.env.APP_SESSION_KEYS]
 
   const config = {
-    store: RedisStore(redisOptions),
+    store: RedisStore({ client: redis }),
     key: 'koa:sess' /** (string) cookie key (default is koa:sess) */,
     /** (number || 'session') maxAge in ms (default is 1 days) */
     /** 'session' will result in a cookie that expires when session/browser is closed */
