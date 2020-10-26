@@ -12,8 +12,22 @@ describe('page', () => {
     server = app.listen()
   })
 
+  it('/login', () => {
+    return request(server)
+      .get('/login')
+      .expect(200)
+      .expect((res) => {
+        expect(res.text).toContain('Please Login')
+      })
+  })
+
   it('/', () => {
-    return request(server).get('/').expect(200).expect('<h1>Hello world</h1>')
+    return request(server)
+      .get('/')
+      .expect(200)
+      .expect((res) => {
+        expect(res.text).toContain('Welcome Home')
+      })
   })
 
   afterAll(() => {

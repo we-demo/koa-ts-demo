@@ -4,7 +4,6 @@ import Router from 'koa-router'
 const router: MyRouter = new Router()
 
 router.use(async (ctx, next) => {
-  console.log(`[api request] method=${ctx.method} url=${ctx.url}`)
   try {
     await next()
   } catch (err) {
@@ -24,6 +23,16 @@ router.get('/session', koaBody(), async (ctx) => {
   const currRand = Math.random()
   ctx.session.rand = currRand
   ctx.body = { lastRand, currRand }
+})
+
+router.post('/login', koaBody(), async (ctx) => {
+  ctx.session.userId = Math.random()
+  ctx.status = 204
+})
+
+router.post('/logout', async (ctx) => {
+  ctx.session = null
+  ctx.status = 204
 })
 
 router.get('/get', async (ctx) => {

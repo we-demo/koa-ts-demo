@@ -33,7 +33,11 @@ app.use(
   })
 )
 
-app.use(koaHelmet())
+app.use(
+  koaHelmet({
+    contentSecurityPolicy: false,
+  })
+)
 
 appSession(app)
 
