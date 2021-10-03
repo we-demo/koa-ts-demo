@@ -9,7 +9,7 @@
     "node:dev": "NODE_ENV=development dotenv node .",
     "node:prod": "NODE_ENV=production dotenv node .",
     "test": "dotenv -e .env -e .env.test jest",
-    "test:cov": "npm run test -- --coverage",
+    "test:cov": "npm run test -- -- --coverage",
     "lint": "eslint src/**/*.ts",
     "clean": "rm -rf dist",
     "watch": "npm run clean && tsc --watch",
@@ -25,6 +25,7 @@
     "koa-redis": "^4.0.1",
     "koa-router": "^9.4.0",
     "koa-session": "^6.1.0",
+    "koa-static": "^5.0.0",
     "source-map-support": "^0.5.19"
   },
   "devDependencies": {
@@ -36,6 +37,7 @@
     "@types/koa-redis": "^4.0.0",
     "@types/koa-router": "^7.4.1",
     "@types/koa-session": "^5.10.3",
+    "@types/koa-static": "^4.0.1",
     "@types/node": "^12.0.10",
     "@types/source-map-support": "^0.5.3",
     "@types/supertest": "^2.0.10",

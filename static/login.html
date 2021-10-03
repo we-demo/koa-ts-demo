@@ -1,0 +1,15 @@
+<title>Login</title>
+<h1>Please Login</h1>
+<div><button id="btn_login">Login</button></div>
+<script>
+  btn_login.addEventListener('click', async () => {
+    try {
+      await fetch('/api/login', {
+        method: 'POST',
+      })
+      location.href = JSON.parse('<%= PASSPORT_REDIRECT_PATH %>');
+    } catch (err) {
+      alert(String(err))
+    }
+  })
+</script>

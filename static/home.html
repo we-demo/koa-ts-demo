@@ -1,0 +1,15 @@
+<title>Home</title>
+<h1>Welcome Home</h1>
+<div><button id="btn_logout">Logout</button></div>
+<script>
+  btn_logout.addEventListener('click', async () => {
+    try {
+      await fetch('/api/logout', {
+        method: 'POST',
+      })
+      location.href = JSON.parse('{{PASSPORT_FALLBACK_PATH}}')
+    } catch (err) {
+      alert(String(err))
+    }
+  })
+</script>

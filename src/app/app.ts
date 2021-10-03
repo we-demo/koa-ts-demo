@@ -2,9 +2,13 @@ require('../polyfill/sourcemap')
 import Koa from 'koa'
 import koaHelmet from 'koa-helmet'
 import KoaRatelimit from 'koa-ratelimit'
+import serve from 'koa-static'
+import { resolve } from 'path'
 import { redis } from '../redis/redis'
 import { appRoutes } from '../routes'
 import { appSession } from './session'
+
+const staticDir = resolve(__dirname, '../../static')
 
 export const app = new Koa()
 
@@ -42,3 +46,5 @@ app.use(
 appSession(app)
 
 app.use(appRoutes)
+
+app.use(serve(staticDir))
